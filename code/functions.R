@@ -95,7 +95,7 @@ fig3.func <- function(D, warmup, post.warmup) {
       )
   }
   
-  return(list(times = times, I = I, N = N))
+  return(list(times = times, I = I, N = N, E = E))
 }
 
 

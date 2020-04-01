@@ -39,6 +39,34 @@ plot(fig3d$times[-(1:w)], fig3d$N[-(1:w)],
 dev.off()
 
 
+png("figs/fig3_supp_env.png", width = 3, height = 6, units = "in", res = 150)
+par(mfrow = c(4, 1), mar = c(5,4,1.5,1))
+plot(fig3a$times[-(1:w)], fig3a$E[-(1:w)], 
+     type = "l", las = 1,
+     ylim = c(1.5, 2.5), yaxs="i", xaxs="i",
+     xlab = "Time",
+     ylab = "Environmental factor",
+     main = "(a)")
+plot(fig3b$times[-(1:w)], fig3b$E[-(1:w)], 
+     type = "l", las = 1,
+     ylim = c(1.5, 2.5), yaxs="i", xaxs="i",
+     xlab = "Time",
+     ylab = "Environmental factor",
+     main = "(b)")
+plot(fig3c$times[-(1:w)], fig3c$E[-(1:w)], 
+     type = "l", las = 1,
+     ylim = c(1.5, 2.5), yaxs="i", xaxs="i",
+     xlab = "Time",
+     ylab = "Environmental factor",
+     main = "(c)")
+plot(fig3d$times[-(1:w)], fig3d$E[-(1:w)], 
+     type = "l", las = 1,
+     ylim = c(1.5, 2.5), yaxs="i", xaxs="i",
+     xlab = "Time",
+     ylab = "Environmental factor",
+     main = "(d)")
+dev.off()
+
 
 
 
