@@ -57,10 +57,7 @@ fN <- function(s, sigma, c, P, E, I) {
 
 
 # Fig. 3 ------------------------------------------------------------------
-
-fig3.func <- function(D) {
-  warmup <- 5000  # number of timestep to let population reach equilibrium
-  post.warmup <- 500  # number of post-warmup timesteps
+fig3.func <- function(D, warmup, post.warmup) {
   times <- seq(0, warmup + post.warmup, 1)
   E <- generate.E(mu = 2, A = 0.05, t = times, T = 11, D = D)
   # plot(times, E, type = "l")
@@ -99,4 +96,23 @@ fig3.func <- function(D) {
   }
   
   return(list(times = times, I = I, N = N))
+}
+
+
+
+
+
+# Fig. 4 ------------------------------------------------------------------
+extract.outbreak <- function(D, theta = 0.05, warmup, post.warmup) {
+  sim <- fig3.func(D = D, warmup = warmup, post.warmup = post.warmup)$N
+  outbreak <- numeric(length(sim))
+  outbreak[1] <- NA
+  for (t in 2:length(sim)) {
+    outbreak[t] <- 
+      ifelse(sim[t-1] / sim[t] < theta,
+             sim[t],
+             0) 
+  }
+  
+  return(outbreak)
 }

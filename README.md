@@ -5,3 +5,7 @@ Some coding exercise to replicate/understand Blarer, A., and M. Doebeli. 1999. R
 ## Figure 3 reproduced
 
 ![](figs/fig3.png)
+
+## Figure 4a reproduced
+
+![](figs/fig4a.png)
